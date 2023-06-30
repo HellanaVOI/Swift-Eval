@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //Mettre la view en cercle derrier l'image User
         viewOfUserIcon.layer.cornerRadius = 75
+        hidePasswordButton.imageView?.contentMode = .scaleAspectFit
         
         // Preparation nde la View Download
         downloadingView.isHidden = true
@@ -43,19 +44,13 @@ class ViewController: UIViewController {
     
     // Observer du Button pour afficher/Cacher le Password
     @IBAction func SwitchHidePassword() {
-        if fieldPassword.isSecureTextEntry {
-            fieldPassword.isSecureTextEntry = false
-            hidePasswordButton.setImage(UIImage(named: "eye_off_icon"), for: .normal)
-            
-        }else{
-            fieldPassword.isSecureTextEntry = true
-            hidePasswordButton.setImage(UIImage(named: "eye_on_icon"), for: .normal)
-        }
-            
         
-        
+        fieldPassword.isSecureTextEntry.toggle()
+        hidePasswordButton.setImage(
+            UIImage(named: fieldPassword.isSecureTextEntry ? "eye_off_icon" : "eye_on_icon"
+                   ), for: .normal)
     }
-
+    
     
     @IBAction func tapOnLogin() {
         let fLogin = fieldLogin.text!
@@ -76,17 +71,15 @@ class ViewController: UIViewController {
             alertMessage(title: "Error", message: "Password pas assez fort")
             
         }else{
-            let message: String
-            if(sNews){
-                message = "Vous vous ete inscris à la newsletter"
-            }else{
-                message = "Vous ne vous ete pas inscris à la newsletter"
-            }
             
             downloadingView.isHidden = false
             loginStart(){
                 DispatchQueue.main.async {
-                    self.alertMessage(title: "Bievenue \(fLogin)", message: message )
+                    self.alertMessage(
+                        title: "Bievenue \(fLogin)", message: sNews ?
+                        "Vous vous ete inscris à la newsletter" :
+                            "Vous ne vous ete pas inscris à la newsletter"
+                    )
                     self.downloadingView.isHidden = true
                 }
             }
@@ -103,20 +96,13 @@ class ViewController: UIViewController {
     }
     
     func alertMessage(title: String, message: String){
-        let valid: String
-        
-        if(title == "Error"){
-            valid = "OK"
-        }else{
-            valid = "Merci !"
-        }
-            
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: valid, style: .default, handler: { action in print("TOUCH OK")
+        alert.addAction(UIAlertAction(title: title == "Error" ? "OK" : "Merci !",
+                                      style: .default, handler: { action in print("TOUCH OK")
         }))
-
+        
         present(alert, animated: true, completion: nil)
         
     }

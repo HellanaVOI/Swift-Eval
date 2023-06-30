@@ -61,36 +61,29 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-XD-6HY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24H-yR-DYh">
                                         <rect key="frame" x="366" y="0.0" width="34" height="34"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24H-yR-DYh">
-                                                <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button" image="eye_on_icon"/>
-                                                <connections>
-                                                    <action selector="SwitchHidePassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="I76-4n-qfi"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="2v7-gk-q5L"/>
-                                            <constraint firstAttribute="bottom" secondItem="24H-yR-DYh" secondAttribute="bottom" id="4gz-QA-Me3"/>
-                                            <constraint firstItem="24H-yR-DYh" firstAttribute="leading" secondItem="R2o-XD-6HY" secondAttribute="leading" id="LQ7-E9-87B"/>
-                                            <constraint firstItem="24H-yR-DYh" firstAttribute="top" secondItem="R2o-XD-6HY" secondAttribute="top" id="cq1-16-Feq"/>
-                                            <constraint firstAttribute="width" secondItem="R2o-XD-6HY" secondAttribute="height" multiplier="1:1" id="oZr-2X-Ugx"/>
-                                            <constraint firstAttribute="trailing" secondItem="24H-yR-DYh" secondAttribute="trailing" id="vKJ-6F-vTb"/>
+                                            <constraint firstAttribute="height" constant="34" id="7Lb-rs-92D"/>
+                                            <constraint firstAttribute="width" secondItem="24H-yR-DYh" secondAttribute="height" multiplier="1:1" id="vjV-Zv-jTD"/>
                                         </constraints>
-                                    </view>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="eye_off_icon"/>
+                                        <connections>
+                                            <action selector="SwitchHidePassword" destination="BYZ-38-t0r" eventType="touchUpInside" id="I76-4n-qfi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-bc-d1T">
                                 <rect key="frame" x="190.66666666666666" y="443" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWJ-Om-yZv">
-                                <rect key="frame" x="86" y="848.66666666666663" width="258" height="34.333333333333371"/>
+                                <rect key="frame" x="86" y="833" width="258" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SjT-YC-asV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
@@ -164,7 +157,7 @@
     </scenes>
     <resources>
         <image name="background_image" width="853" height="1280"/>
-        <image name="eye_on_icon" width="512" height="512"/>
+        <image name="eye_off_icon" width="512" height="334"/>
         <image name="user_icon" width="200" height="200"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
