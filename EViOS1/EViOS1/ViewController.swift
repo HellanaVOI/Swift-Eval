@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var fieldPassword: UITextField!
     @IBOutlet weak var fieldLogin: UITextField!
     @IBOutlet weak var switchNewslette: UISwitch!
-    @IBOutlet weak var hidePasswordImage: UIImageView!
+    @IBOutlet weak var hidePasswordButton: UIButton!
     @IBOutlet weak var downloadingView: UIView!
     @IBOutlet weak var animaDownload: UIActivityIndicatorView!
     
@@ -45,11 +45,11 @@ class ViewController: UIViewController {
     @IBAction func SwitchHidePassword() {
         if fieldPassword.isSecureTextEntry {
             fieldPassword.isSecureTextEntry = false
-            hidePasswordImage.image = UIImage(named: "eye_off_icon")
+            hidePasswordButton.setImage(UIImage(named: "eye_off_icon"), for: .normal)
             
         }else{
             fieldPassword.isSecureTextEntry = true
-            hidePasswordImage.image = UIImage(named: "eye_on_icon")
+            hidePasswordButton.setImage(UIImage(named: "eye_on_icon"), for: .normal)
         }
             
         
