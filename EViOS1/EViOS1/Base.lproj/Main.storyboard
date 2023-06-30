@@ -104,18 +104,36 @@
                                     <action selector="tapOnLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvs-jB-9bb"/>
                                 </connections>
                             </button>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pG9-RK-d6B">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Kr5-dk-qBr">
+                                        <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstItem="Kr5-dk-qBr" firstAttribute="centerX" secondItem="pG9-RK-d6B" secondAttribute="centerX" id="gpG-jd-s8s"/>
+                                    <constraint firstItem="Kr5-dk-qBr" firstAttribute="centerY" secondItem="pG9-RK-d6B" secondAttribute="centerY" id="mEX-Te-lrY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="p0w-oS-jAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="1uv-CM-JaF"/>
+                            <constraint firstItem="pG9-RK-d6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2DP-ah-6Qx"/>
                             <constraint firstItem="TRj-NU-ErG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="2sg-48-ecW"/>
                             <constraint firstItem="2Q3-bc-d1T" firstAttribute="top" secondItem="HBO-xe-4N9" secondAttribute="bottom" constant="15" id="4ID-CZ-VyI"/>
                             <constraint firstItem="1b8-tD-suf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="7CO-C1-5kI"/>
                             <constraint firstItem="N2y-EX-opP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="Dwz-4b-x4y"/>
+                            <constraint firstItem="pG9-RK-d6B" firstAttribute="height" secondItem="QbY-9s-LG5" secondAttribute="height" id="HeM-6t-SZu"/>
                             <constraint firstAttribute="bottom" secondItem="QbY-9s-LG5" secondAttribute="bottom" id="Jgd-c6-Mr1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TRj-NU-ErG" secondAttribute="trailing" constant="15" id="Lls-zK-hNa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1b8-tD-suf" secondAttribute="trailing" constant="15" id="QG4-92-mUa"/>
+                            <constraint firstItem="pG9-RK-d6B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UXk-eS-tha"/>
+                            <constraint firstItem="pG9-RK-d6B" firstAttribute="width" secondItem="QbY-9s-LG5" secondAttribute="width" id="WYC-dt-Aew"/>
                             <constraint firstItem="1b8-tD-suf" firstAttribute="top" secondItem="N2y-EX-opP" secondAttribute="bottom" constant="15" id="X8d-FN-ocO"/>
                             <constraint firstItem="QbY-9s-LG5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YQ2-Fj-l5W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0w-oS-jAr" secondAttribute="trailing" constant="15" id="hDi-CQ-r0k"/>
@@ -135,6 +153,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animaDownload" destination="Kr5-dk-qBr" id="Mks-O8-2jg"/>
+                        <outlet property="downloadingView" destination="pG9-RK-d6B" id="PCj-kF-JiE"/>
                         <outlet property="fieldLogin" destination="TRj-NU-ErG" id="Zcf-0C-Owd"/>
                         <outlet property="fieldPassword" destination="CfM-f5-pK3" id="r2l-mn-KXA"/>
                         <outlet property="hidePasswordImage" destination="zuQ-IQ-TYN" id="Bfd-Qf-cyn"/>
@@ -151,6 +171,9 @@
         <image name="background_image" width="853" height="1280"/>
         <image name="eye_on_icon" width="512" height="512"/>
         <image name="user_icon" width="200" height="200"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

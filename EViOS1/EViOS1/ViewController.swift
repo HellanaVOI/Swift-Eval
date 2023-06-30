@@ -14,11 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var fieldLogin: UITextField!
     @IBOutlet weak var switchNewslette: UISwitch!
     @IBOutlet weak var hidePasswordImage: UIImageView!
+    @IBOutlet weak var downloadingView: UIView!
+    @IBOutlet weak var animaDownload: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Mettre la view en cercle derrier l'image User
         viewOfUserIcon.layer.cornerRadius = 75
+        
+        // Preparation nde la View Download
+        downloadingView.isHidden = true
+        animaDownload.startAnimating()
         
         
         //Exo2
@@ -77,10 +83,23 @@ class ViewController: UIViewController {
                 message = "Vous n'etepas inscrit à la newsletter"
             }
             
-            alertMessage(title: "Bievenue \(fLogin)", message: message )
+            downloadingView.isHidden = false
+            loginStart(){
+                DispatchQueue.main.async {
+                    self.alertMessage(title: "Bievenue \(fLogin)", message: message )
+                    self.downloadingView.isHidden = true
+                }
+            }
         }
         
         
+    }
+    
+    func loginStart(completion: @escaping () -> Void ){
+        DispatchQueue.global(qos: .default).async {
+            sleep(5)
+            completion()
+        }
     }
     
     
