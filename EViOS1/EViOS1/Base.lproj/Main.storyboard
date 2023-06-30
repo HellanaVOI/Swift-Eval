@@ -146,11 +146,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HBO-xe-4N9" secondAttribute="trailing" constant="15" id="vep-md-605"/>
                             <constraint firstItem="HBO-xe-4N9" firstAttribute="top" secondItem="p0w-oS-jAr" secondAttribute="bottom" constant="15" id="wsg-TB-e1o"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="pG9-RK-d6B"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="animaDownload" destination="Kr5-dk-qBr" id="Mks-O8-2jg"/>
