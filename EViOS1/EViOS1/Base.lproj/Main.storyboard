@@ -100,6 +100,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Login">
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapOnLogin" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvs-jB-9bb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -135,6 +138,7 @@
                         <outlet property="fieldLogin" destination="TRj-NU-ErG" id="Zcf-0C-Owd"/>
                         <outlet property="fieldPassword" destination="CfM-f5-pK3" id="r2l-mn-KXA"/>
                         <outlet property="hidePasswordImage" destination="zuQ-IQ-TYN" id="Bfd-Qf-cyn"/>
+                        <outlet property="switchNewslette" destination="2Q3-bc-d1T" id="zGf-r3-2VQ"/>
                         <outlet property="viewOfUserIcon" destination="N2y-EX-opP" id="ZT6-Rh-6cW"/>
                     </connections>
                 </viewController>
