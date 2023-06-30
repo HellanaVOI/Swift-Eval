@@ -78,9 +78,9 @@ class ViewController: UIViewController {
         }else{
             let message: String
             if(sNews){
-                message = "Vous vous ete inscrit à la newsletter"
+                message = "Vous vous ete inscris à la newsletter"
             }else{
-                message = "Vous n'etepas inscrit à la newsletter"
+                message = "Vous ne vous ete pas inscris à la newsletter"
             }
             
             downloadingView.isHidden = false
@@ -97,17 +97,24 @@ class ViewController: UIViewController {
     
     func loginStart(completion: @escaping () -> Void ){
         DispatchQueue.global(qos: .default).async {
-            sleep(5)
+            sleep(3)
             completion()
         }
     }
     
-    
-    
     func alertMessage(title: String, message: String){
+        let valid: String
+        
+        if(title == "Error"){
+            valid = "OK"
+        }else{
+            valid = "Merci !"
+        }
+            
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in print("TOUCH OK")
+        alert.addAction(UIAlertAction(title: valid, style: .default, handler: { action in print("TOUCH OK")
         }))
 
         present(alert, animated: true, completion: nil)
